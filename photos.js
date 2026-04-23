@@ -15,7 +15,7 @@ window.PHOTOS = {
     alt: 'Hunter Douglas wood blinds installed in a Boise home'
   },
   'product-shades': {
-    src: '',
+    src: 'photos/product-shades.jpg',
     alt: 'Hunter Douglas cellular shades in a sunlit Boise room'
   },
   'product-shutters': {
