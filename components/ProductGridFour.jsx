@@ -7,7 +7,7 @@
 // later expanded to four, drop this file and wire the original back in.
 function ProductGridFour() {
   const products = [
-    { name: 'Blinds',   slot: 'product-blinds',   detail: 'Parkland hardwood · EverWood alternative · Modern Precious Metals', tone: 'a' },
+    { name: 'Blinds',   slot: 'product-blinds',   detail: 'Parkland hardwood · EverWood composite', tone: 'a' },
     { name: 'Shades',   slot: 'product-shades',   detail: 'Duette, Silhouette, Luminette · PowerView ready',                    tone: 'b' },
     { name: 'Shutters', slot: 'product-shutters', detail: 'Heritance hardwood · NewStyle hybrid',                                tone: 'c' },
     { name: 'Drapery',  slot: 'product-drapery',  detail: 'Design Studio custom · motorized track',                              tone: 'a' },
