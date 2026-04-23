@@ -23,7 +23,7 @@ window.PHOTOS = {
     alt: 'Hunter Douglas plantation shutters in a Boise home'
   },
   'product-drapery': {
-    src: '',
+    src: 'photos/product-drapery.png',
     alt: 'Hunter Douglas custom drapery on a motorized track in a Boise home'
   },
   'feature-powerview': {
