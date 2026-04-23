@@ -19,7 +19,7 @@ window.PHOTOS = {
     alt: 'Hunter Douglas cellular shades in a sunlit Boise room'
   },
   'product-shutters': {
-    src: '',
+    src: 'photos/product-shutters.png',
     alt: 'Hunter Douglas plantation shutters in a Boise home'
   },
   'product-drapery': {
