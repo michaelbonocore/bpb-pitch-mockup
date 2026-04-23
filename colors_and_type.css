@@ -1,0 +1,237 @@
+/* =========================================================
+   Boise Premier Blinds. Design Tokens
+   Colors & Typography
+   ========================================================= */
+
+/* Fonts: loaded from Google Fonts.
+   Display: Newsreader (sharp modern editorial serif)
+   Body/UI: Inter (clean neutral sans)
+   NOTE: If self-hosting for WordPress/Kadence, download from
+   https://fonts.google.com/specimen/Newsreader
+   https://fonts.google.com/specimen/Inter
+*/
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6.72,300;0,6.72,400;0,6.72,500;0,6.72,600;1,6.72,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+html { font-synthesis: none; }
+
+:root {
+  /* ---------- CORE PALETTE ---------- */
+
+  /* Warm neutral base */
+  --bpb-bone:        #F7F4EE;  /* primary background. warm off-white */
+  --bpb-paper:       #EFEAE0;  /* secondary surface, slight depth */
+  --bpb-linen:       #E6DFD2;  /* divider / quiet section bg */
+
+  /* Warm taupe secondary */
+  --bpb-taupe:       #B8A590;  /* secondary fill, soft accent */
+  --bpb-taupe-deep:  #8F7D68;  /* hover of taupe, subdued icon */
+  --bpb-taupe-soft:  #D9CCB8;  /* tints, chips, soft surfaces */
+
+  /* Primary CTA family */
+  --bpb-bronze:      #2E2A24;  /* primary CTA + primary text */
+  --bpb-bronze-hover:#1F1C17;  /* CTA hover */
+  --bpb-bronze-press:#3A3630;  /* CTA active/pressed (lighter lift) */
+
+  /* Brand navy. logo identity mark ONLY. Restrained accent. */
+  --bpb-navy:        #2C4257;  /* matches logo */
+  --bpb-navy-soft:   #4A6176;  /* rarely used, for navy-on-navy */
+
+  /* Ink scale (warm blacks) */
+  --bpb-ink:         #1C1A16;  /* headings */
+  --bpb-ink-2:       #3A362F;  /* body */
+  --bpb-ink-3:       #6B6358;  /* secondary body / metadata */
+  --bpb-ink-4:       #9A9082;  /* muted, captions, placeholder */
+
+  /* Semantic */
+  --bpb-success:     #55664A;  /* muted sage, warm green */
+  --bpb-warning:     #B8823A;  /* burnished amber */
+  /* Marker color. Reserved for destructive-state and placeholder-state UI markers only. Never a brand surface, never a CTA, never display copy. */
+  --bpb-marker:      #8A3A28;
+
+  /* ---------- SEMANTIC TOKENS ---------- */
+
+  --bg:              var(--bpb-bone);
+  --bg-elevated:     #FFFFFF;                 /* only for floating cards */
+  --bg-quiet:        var(--bpb-paper);
+  --bg-deep:         var(--bpb-bronze);       /* inverse sections */
+
+  --fg:              var(--bpb-ink);
+  --fg-1:            var(--bpb-ink);
+  --fg-2:            var(--bpb-ink-2);
+  --fg-3:            var(--bpb-ink-3);
+  --fg-4:            var(--bpb-ink-4);
+  --fg-on-dark:      var(--bpb-bone);
+
+  --border:          rgba(46, 42, 36, 0.12);  /* hairline, warm */
+  --border-strong:   rgba(46, 42, 36, 0.22);
+  --border-on-dark:  rgba(247, 244, 238, 0.14);
+
+  --accent:          var(--bpb-taupe);
+  --accent-deep:     var(--bpb-taupe-deep);
+  --brand-mark:      var(--bpb-navy);         /* logo identity ONLY */
+
+  --cta-bg:          var(--bpb-bronze);
+  --cta-fg:          var(--bpb-bone);
+  --cta-bg-hover:    var(--bpb-bronze-hover);
+
+  /* ---------- TYPOGRAPHY ---------- */
+
+  --font-display:    'Newsreader', 'Cormorant Garamond', 'Georgia', 'Times New Roman', serif;
+  --font-body:       'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --font-mono:       ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* Type scale. editorial. Display sizes breathe. */
+  --fs-display:      clamp(3.25rem, 6vw, 5.75rem);  /* 52–92 */
+  --fs-h1:           clamp(2.5rem, 4.5vw, 4rem);    /* 40–64 */
+  --fs-h2:           clamp(2rem, 3.2vw, 2.75rem);   /* 32–44 */
+  --fs-h3:           1.75rem;                        /* 28 */
+  --fs-h4:           1.375rem;                       /* 22 */
+  --fs-lead:         1.1875rem;                      /* 19 */
+  --fs-body:         1.0625rem;                      /* 17 */
+  --fs-small:        0.9375rem;                      /* 15 */
+  --fs-caption:      0.8125rem;                      /* 13 */
+  --fs-eyebrow:      0.75rem;                        /* 12 */
+
+  --lh-display:      1.03;
+  --lh-heading:      1.12;
+  --lh-body:         1.6;
+  --lh-tight:        1.3;
+
+  --tracking-display:-0.02em;
+  --tracking-heading:-0.015em;
+  --tracking-body:   0;
+  --tracking-eyebrow:0.14em;   /* the one exception: eyebrows only */
+
+  /* ---------- SPACING / RADII / SHADOW ---------- */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 96px;
+  --space-10:128px;
+
+  --radius-xs: 2px;
+  --radius-sm: 4px;    /* default. editorial, not pillowy */
+  --radius-md: 6px;
+  --radius-lg: 10px;   /* cards, images */
+  --radius-pill: 999px;/* used sparingly, chips only */
+
+  /* Warm, low-contrast shadows. No hard drop shadows. */
+  --shadow-xs: 0 1px 2px rgba(28, 26, 22, 0.04);
+  --shadow-sm: 0 2px 8px rgba(28, 26, 22, 0.06);
+  --shadow-md: 0 8px 24px rgba(28, 26, 22, 0.08);
+  --shadow-lg: 0 24px 60px rgba(28, 26, 22, 0.10);
+
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-out:      cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-1: 120ms;
+  --dur-2: 200ms;
+  --dur-3: 320ms;
+  --dur-4: 500ms;
+
+  --container:     1240px;
+  --container-text: 680px;  /* editorial reading measure */
+}
+
+/* =========================================================
+   Semantic element defaults
+   ========================================================= */
+
+html { color-scheme: light; }
+
+body {
+  background: var(--bg);
+  color: var(--fg-2);
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  color: var(--fg-1);
+  font-weight: 400;            /* serif display prefers regular weight */
+  letter-spacing: var(--tracking-heading);
+  line-height: var(--lh-heading);
+  text-wrap: balance;
+}
+h1 { font-size: var(--fs-h1); letter-spacing: var(--tracking-display); line-height: var(--lh-display); }
+h2 { font-size: var(--fs-h2); }
+h3 { font-size: var(--fs-h3); }
+
+h4, h5, h6 {
+  font-family: var(--font-body);
+  color: var(--fg-1);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: var(--lh-tight);
+}
+h4 { font-size: var(--fs-h4); }
+
+p {
+  max-width: var(--container-text);
+  color: var(--fg-2);
+  text-wrap: pretty;
+}
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--fs-eyebrow);
+  font-weight: 500;
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+.lead {
+  font-size: var(--fs-lead);
+  line-height: 1.55;
+  color: var(--fg-2);
+}
+
+.display {
+  font-family: var(--font-display);
+  font-size: var(--fs-display);
+  line-height: var(--lh-display);
+  letter-spacing: var(--tracking-display);
+  font-weight: 400;
+  color: var(--fg-1);
+  text-wrap: balance;
+}
+
+.display--italic {
+  font-style: italic;
+  font-weight: 400;
+}
+
+small, .caption {
+  font-size: var(--fs-caption);
+  color: var(--fg-3);
+}
+
+a {
+  color: var(--fg-1);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--border-strong);
+  transition: text-decoration-color var(--dur-2) var(--ease-standard);
+}
+a:hover { text-decoration-color: var(--fg-1); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: var(--space-7) 0;
+}
+
+/* Utility */
+.container { max-width: var(--container); margin: 0 auto; padding: 0 var(--space-6); }
+.container--text { max-width: var(--container-text); margin: 0 auto; padding: 0 var(--space-6); }

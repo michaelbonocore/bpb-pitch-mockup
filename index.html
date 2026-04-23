@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Boise Premier Blinds · Hunter Douglas Priority Dealer · Treasure Valley</title>
+<meta name="description" content="Boise Premier Blinds: a Hunter Douglas Priority Dealer serving Boise, Meridian, Eagle, and Nampa. Free in-home consultation. Factory-trained installation.">
+
+<!-- Locked design system tokens + type + component styles.
+     Do not edit the bundle; only connector CSS is inlined below. -->
+<link rel="stylesheet" href="colors_and_type.css">
+<link rel="stylesheet" href="styles.css">
+
+<!-- Favicon -->
+<link rel="icon" type="image/webp" href="assets/logo-mark.webp">
+
+<!-- Photo slot registry. Must load before React/Babel so window.PHOTOS
+     is populated before any component evaluates its JSX. -->
+<script src="photos.js"></script>
+
+<!-- React 18 + Babel (pinned, with integrity per house rules) -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<style>
+/* --------------------------------------------------------------------
+   Connector CSS. Minor, page-level only. All foundation rules live in
+   colors_and_type.css + ui_kits/website/styles.css. Everything here is
+   either (a) a 4-column override for the products grid or (b) a thin
+   connector (pitch banner, section spacing rhythm).
+   WordPress + Kadence parity: flex/grid, media query, backdrop-filter
+   only (already used in header). Nothing Kadence cannot render.
+   -------------------------------------------------------------------- */
+
+/* Pitch ribbon: identifies this artifact as a pre-publication pitch.
+   Hidden in print and collapses on narrow screens. */
+.pitch-ribbon{
+  background:var(--bpb-ink);
+  color:rgba(247,244,238,0.86);
+  font-family:var(--font-body);
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-align:center;
+  padding:9px 16px;
+  border-bottom:1px solid rgba(247,244,238,0.08);
+}
+.pitch-ribbon strong{
+  color:var(--bpb-bone);
+  font-weight:600;
+  letter-spacing:.14em;
+}
+.pitch-ribbon span{
+  color:rgba(247,244,238,0.55);
+  margin:0 10px;
+}
+@media print { .pitch-ribbon { display:none; } }
+
+/* Products grid override: the bundle ships with three columns; the pitch
+   calls for four. Same card CSS, just a different track count. */
+.bpb-product-grid--four{
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
+}
+.bpb-product-grid--four .bpb-product-card .bpb-ph{ aspect-ratio:3/4; }
+@media (max-width:1100px){
+  .bpb-product-grid--four{ grid-template-columns:repeat(2,1fr); }
+}
+@media (max-width:560px){
+  .bpb-product-grid--four{ grid-template-columns:1fr; }
+}
+
+/* Feature band tone variants so the two ProjectFeature instances sit
+   differently from the ProductGrid placeholders. Purely a placeholder
+   palette shift; swaps out wholesale when real photography lands. */
+.bpb-ph--powerview{
+  background:
+    radial-gradient(120% 80% at 20% 20%, rgba(247,244,238,0.18) 0%, transparent 55%),
+    linear-gradient(140deg,#2a2722 0%,#4a4138 55%,#8a7964 100%);
+}
+.bpb-ph--portfolio{
+  background:
+    radial-gradient(120% 80% at 80% 30%, rgba(247,244,238,0.22) 0%, transparent 55%),
+    linear-gradient(135deg,#E0D3BC 0%,#B8A590 55%,#8F7D68 100%);
+}
+
+/* Section connector: tighten vertical rhythm where two feature bands sit
+   back-to-back so the page does not feel like a stack of islands. */
+.bpb-feature + .bpb-feature{ margin-top:56px; }
+
+/* --------------------------------------------------------------------
+   v2 second-opinion fixes. Scoped overrides; no bundle changes.
+   -------------------------------------------------------------------- */
+
+/* Fix 1: hero H1 balance. The Hero markup keeps "Hunter&nbsp;Douglas"
+   intact; this rule reinforces two-line wrapping on wide viewports. */
+.bpb-hero .bpb-display,
+.bpb-display--balance{
+  text-wrap: balance;
+}
+
+/* Fix 4a: hero eyebrow contrast. Lift from 0.72 to full bone and slightly
+   relax tracking so the type breathes at full opacity. Pairs against the
+   darkest point of the 10-to-70 percent scrim at the base of the hero. */
+.bpb-eyebrow--light-aa{
+  color: var(--bpb-bone) !important;
+  opacity: 0.96;
+  letter-spacing: 0.12em;
+}
+
+/* Fix 4b: secondary link contrast. Text stays bone (already strong);
+   lift the underline border from 0.4 to 0.6 so it registers as a link. */
+.bpb-hero .bpb-link-arrow--aa{
+  color: var(--bpb-bone);
+  border-bottom-color: rgba(247, 244, 238, 0.6);
+}
+.bpb-hero .bpb-link-arrow--aa:hover{
+  border-bottom-color: var(--bpb-bone);
+}
+
+/* Fix 5: product card eyebrow-on-tint contrast.
+   The bundle ships bpb-ph-label at rgba(247,244,238,0.55), which fails
+   AA on the lighter gradient tops (tones a and c especially). We darken
+   the text to warm bronze and set it on a bone scrim plate. The plate
+   is small, so the warm feel of the gradient below still dominates. */
+.bpb-product-card .bpb-ph-label--aa{
+  color: var(--bpb-ink) !important;
+  opacity: 1;
+  background: rgba(247, 244, 238, 0.92);
+  padding: 5px 10px;
+  border-radius: 2px;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+}
+
+/* Print-only trust styling so the PDF version of this pitch link is
+   still on brand. */
+@media print{
+  body{ background:var(--bpb-bone); }
+  .bpb-header, .bpb-hamburger, .bpb-mobile-nav { display:none !important; }
+  .bpb-hero{ min-height:auto; padding:48px 40px; }
+}
+</style>
+
+</head>
+<body>
+
+<!-- Pitch banner. Plain HTML so it renders even before React hydrates. -->
+<div class="pitch-ribbon" role="note" aria-label="Pitch artifact">
+  <strong>Pitch preview</strong>
+  <span>·</span>
+  Design system v4 locked
+  <span>·</span>
+  Photography + reviews are placeholders until Phase 1 shoot
+</div>
+
+<div id="root"></div>
+
+<!-- Bundle components (do not modify). Relative paths resolve to
+     /projects/&lt;this project&gt;/ui_kits/website/*.jsx -->
+<script type="text/babel" src="components/Header.jsx"></script>
+<script type="text/babel" src="components/HeroLocal.jsx"></script>
+<script type="text/babel" src="components/TrustBar.jsx"></script>
+<script type="text/babel" src="components/ProcessStrip.jsx"></script>
+<!-- Local override: four-card ProductGrid (see file header comment). -->
+<script type="text/babel" src="components/ProductGridFour.jsx"></script>
+<script type="text/babel" src="components/ProjectFeature.jsx"></script>
+<script type="text/babel" src="components/ReviewsRail.jsx"></script>
+<script type="text/babel" src="components/AboutStrip.jsx"></script>
+<script type="text/babel" src="components/CTABanner.jsx"></script>
+<script type="text/babel" src="components/Footer.jsx"></script>
+
+<script type="text/babel">
+function App() {
+  return (
+    <React.Fragment>
+      {/* 1. Header: logo, nav, phone-as-text-link, single bronze CTA */}
+      <Header />
+
+      {/* 2. Hero: full-bleed editorial, eyebrow + H1 + lead + primary CTA.
+             v2 fixes: Hunter Douglas non-breaking, "Specified" verb,
+             AA contrast on eyebrow + secondary link. Rendered from
+             HeroLocal (local override, bundle Hero untouched). */}
+      <HeroLocal />
+
+      {/* 3. TrustBar: Priority Dealer · 15+ years · 5.0 / 24 Google · Treasure Valley */}
+      <TrustBar />
+
+      {/* 4. ProcessStrip: four steps of what happens at the consultation.
+             [needs verification] The 3-5 week lead time and the
+             installer-process lines are the bundle defaults. Owner
+             (Justin) still needs to confirm both before publication.
+             Per the pitch spec, we ship them as-is for this artifact. */}
+      <ProcessStrip />
+
+      {/* 5. ProductGrid: four editorial cards. Bundle ships three; the
+             override adds Blinds as the first card. Same card styling. */}
+      <ProductGridFour />
+
+      {/* 6. PowerView feature band: 55/45 split, forward direction */}
+      <ProjectFeature
+        tone="powerview"
+        eyebrow="PowerView Automation"
+        title="Shades that know your day."
+        body="Schedules tied to sunrise and sunset, scenes for movie night, and voice control through Alexa, Google, or HomeKit. Your shades open with the coffee, close with the glare, and retire when the house goes to sleep."
+        specs={[
+          { k: 'System',  v: 'PowerView Gen 3' },
+          { k: 'Control', v: 'App · Pebble remote · voice' },
+          { k: 'Voice',   v: 'Alexa · Google · HomeKit' },
+          { k: 'Power',   v: 'Rechargeable battery wand' },
+        ]}
+      />
+
+      {/* 7. Portfolio feature: 45/55 reverse split */}
+      <ProjectFeature
+        reverse
+        tone="portfolio"
+        eyebrow="Recent work · Eagle, ID"
+        title="Eleven openings, one great room."
+        body="A west-facing great room that ran too bright in July and too dark in November. Duette Architella in opal, on PowerView schedules pegged to the sun. One day to install, no dust, no disruption."
+        specs={[
+          { k: 'Product',     v: 'Duette Architella · opal' },
+          { k: 'Openings',    v: '11' },
+          { k: 'Automation',  v: 'PowerView · sun-tracked' },
+          { k: 'Install time', v: 'One day' },
+        ]}
+      />
+
+      {/* 8. AboutStrip: Justin portrait, H2, body, [PLACEHOLDER QUOTE].
+             v2 fix: moved ahead of ReviewsRail so owner credibility
+             anchors the proof layer before social proof. */}
+      <AboutStrip />
+
+      {/* 9. ReviewsRail: three explicit [PLACEHOLDER REVIEW] entries.
+             Visible placeholder styling is intentional: pitch artifact. */}
+      <ReviewsRail />
+
+      {/* 10. CTABanner: bronze full-bleed, the single primary CTA */}
+      <CTABanner />
+
+      {/* 11. Footer: warm dark, service area, Priority Dealer mark */}
+      <Footer />
+    </React.Fragment>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+
+</body>
+</html>
