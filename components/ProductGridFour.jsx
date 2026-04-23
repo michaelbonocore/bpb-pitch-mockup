@@ -25,7 +25,7 @@ function ProductGridFour() {
             <a key={i} className="bpb-product-card" href="#">
               <div className={`bpb-ph bpb-ph--${p.tone}`}>
                 {photo.src ? (
-                  <img src={photo.src} alt={photo.alt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                  <img src={photo.src} alt={photo.alt} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 ) : (
                   /* Eyebrow tag wrapped in a scrim plate so small-text AA
                      contrast is preserved over every gradient tint. */

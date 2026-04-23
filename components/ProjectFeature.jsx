@@ -6,7 +6,7 @@ function ProjectFeature({ reverse, eyebrow, title, body, specs, tone = 'a' }) {
     <section className={`bpb-feature ${reverse ? 'is-reverse' : ''}`}>
       <div className={`bpb-ph bpb-ph--${tone} bpb-feature-media`}>
         {photo.src ? (
-          <img src={photo.src} alt={photo.alt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+          <img src={photo.src} alt={photo.alt} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
         ) : (
           <span className="bpb-ph-label">Editorial · installed work</span>
         )}

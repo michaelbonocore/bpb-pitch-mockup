@@ -18,7 +18,7 @@ function HeroLocal() {
       <div className="bpb-hero-media" aria-hidden={photo.src ? undefined : "true"}>
         {photo.src ? (
           <div className="bpb-ph bpb-ph--hero">
-            <img src={photo.src} alt={photo.alt} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+            <img src={photo.src} alt={photo.alt} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
         ) : (
           <div className="bpb-ph bpb-ph--hero">
