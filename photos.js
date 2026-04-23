@@ -7,7 +7,7 @@
 // src here, commit, push. GitHub Pages rebuilds in seconds.
 window.PHOTOS = {
   hero: {
-    src: '',
+    src: 'photos/hero.jpg',
     alt: 'Installed Hunter Douglas window treatments in a Treasure Valley living room'
   },
   'product-blinds': {
