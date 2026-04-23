@@ -31,7 +31,7 @@ window.PHOTOS = {
     alt: 'Hunter Douglas PowerView automated shades in a Treasure Valley home'
   },
   'feature-portfolio': {
-    src: '',
+    src: 'photos/feature-portfolio.png',
     alt: 'Duette Architella shades installed across eleven openings in an Eagle, Idaho great room'
   }
 };
