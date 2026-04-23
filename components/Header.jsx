@@ -23,7 +23,7 @@ function Header() {
     <>
     <header className={`bpb-header ${scrolled ? 'is-scrolled' : ''}`}>
       <a className="bpb-brand" href="#">
-        <img src="assets/logo-horizontal.png" alt="Boise Premier Blinds" />
+        <img src="assets/logo-horizontal.jpg" alt="Boise Premier Blinds" />
       </a>
       <nav className="bpb-nav">
         <a href="#products">Products</a>
