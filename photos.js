@@ -11,7 +11,7 @@ window.PHOTOS = {
     alt: 'Installed Hunter Douglas window treatments in a Treasure Valley living room'
   },
   'product-blinds': {
-    src: '',
+    src: 'photos/product-blinds.jpg',
     alt: 'Hunter Douglas wood blinds installed in a Boise home'
   },
   'product-shades': {
