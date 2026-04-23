@@ -27,7 +27,7 @@ window.PHOTOS = {
     alt: 'Hunter Douglas custom drapery on a motorized track in a Boise home'
   },
   'feature-powerview': {
-    src: '',
+    src: 'photos/feature-powerview.png',
     alt: 'Hunter Douglas PowerView automated shades in a Treasure Valley home'
   },
   'feature-portfolio': {
